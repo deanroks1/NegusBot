@@ -33,7 +33,7 @@ async def on_ready():
     print('[C]: Username: {0.user.name}#{0.user.discriminator}\n[C]: UserID: {0.user.id}\n[C]: Date Creation: {0.user.created_at}'.format(bot));
     print(f'[C]: Currently in {int(len(bot.guilds))} servers!')
 
-    await bot.change_presence(activity=discord.Game(name="Negus bot v0.1"))
+    await bot.change_presence(activity=discord.Game(name=" big Negus v0.1"))
 
 
 
