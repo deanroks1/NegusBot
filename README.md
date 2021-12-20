@@ -1,0 +1,1 @@
+# NegusBot-Not-Perm-name-for-bot
