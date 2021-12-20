@@ -21,7 +21,7 @@ from discord.ext.commands import has_permissions
 
 bot = commands.Bot(
   command_prefix = commands.when_mentioned_or('>'),
-  help_command=None,
+  help_command=help,
   intents=discord.Intents.all(),
   bot=True,
 )
