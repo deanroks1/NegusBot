@@ -1,79 +1,73 @@
-import discord
-from discord.ext import commands
+print("logging into bot")
+print("...............")
+print(".             .")
+print("..           ..")
+print("...         ...")
+print("....       ....")
+print(".....     .....")
+print("......   ......")
+print("Logged into the bot sucsesfully")
+print("prefix = /")
+
+
+
+import re
 import string
+import random
+from mimesis import Internet
+import sys
 import os
 import discord
-import random
-import transliterate
-import re
-from mimesis import Internet
-from faker import Faker
-import sys
-import base64 
+from discord.ext import commands
+from discord_slash import SlashCommand, SlashContext
+from discord_slash.utils.manage_commands import create_choice, create_option
 import time
-import asyncio
-from os import listdir
-from discord import Guild
-import json
-from discord.ext.commands.context import Context
-from discord.ext.commands import has_permissions
+
+client = commands.Bot(command_prefix="!")
+slash = SlashCommand(client, sync_commands=True)
+token = "OTIyNjIwMTc1NjMzNzY4NDY4.YcEG_w.t8SuFPeeuLewD2YPLqC-Pptf67c"
 
 
-bot = commands.Bot(
-  command_prefix = commands.when_mentioned_or('>'),
-  help_command=None,
-  intents=discord.Intents.all(),
-  bot=True,
+
+
+
+@slash.slash(
+    name="hello",
+    description="Test",
+    guild_ids=[922622739351760966]
 )
-
-# on start-up
-
-@bot.event
-async def on_ready():
-    print('[C]: Username: {0.user.name}#{0.user.discriminator}\n[C]: UserID: {0.user.id}\n[C]: Date Creation: {0.user.created_at}'.format(bot));
-    print(f'[C]: Currently in {int(len(bot.guilds))} servers!')
-
-    await bot.change_presence(activity=discord.Game(name="big Negus v0.1"))
+async def hello(ctx:SlashContext):
+	await ctx.send("test")
 
 
 
-
-@bot.command(name='help')
-async def help(ctx):
-  embed = discord.Embed(color=discord.Color.green())
-  embed.title = '️My available commands:'
-  embed.description = '️⌨️ Prefix: `>`'
-  embed.add_field(name='ping', value='Wanna play ping-pong?',inline=True)
-  embed.add_field(name='restart', value='Restarts the bot.',inline=True)
-  embed.add_field(name='', value='Restarts the bot.',inline=True)
-
-
-
-
-@bot.command(name='restart')
-async def restart(ctx):
-  if ctx.message.author.id == 728808714596777994 or ctx.message.author.id == 624861181311451137 or ctx.message.author.id == 886852737944395806 or ctx.message.author.id == 900779153203273779:
+@slash.slash(
+    name="Help",
+    description="Help command",
+    guild_ids=[922622739351760966]
+)
+async def help(ctx:SlashContext):
     embed = discord.Embed(color=discord.Color.green())
-    embed.title = '👋🏼 Restarting!'
-    embed.set_footer(text=bot.user.name,icon_url=bot.user.avatar_url)
+    embed.title = '️My available commands:'
+    embed.description = '️⌨️ Prefix: `/`'
+    embed.add_field(name='hello', value='Test command', inline=True)
+    await ctx.send(content="", embeds=[embed])
 
-    await ctx.message.reply(embed=embed, mention_author=True)
 
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
-  else:
-    embed = discord.Embed(color=discord.Color.red())
-    embed.title = '👿 Not enough permissions.'
-    embed.set_footer(text=bot.user.name,icon_url=bot.user.avatar_url)
+@slash.slash(
+    name="Credit",
+    description="Credits to my awesome owners.",
+    guild_ids=[922622739351760966]
+)
+async def help(ctx:SlashContext):
+    embed = discord.Embed(color=discord.Color.green())
+    embed.title = '️Credits to my owner'
+    embed.description = '️These awesome people made me'
+    embed.add_field(name='Owners:', value='Dean_#6947, HamSmacker#0002, xnb#0001, tncYT#6749.', inline=True)
+    await ctx.send(content="", embeds=[embed])
 
-    await ctx.message.reply(embed=embed, mention_author=True)
-    
-@bot.command(name='credits')
-async def credit(ctx):
-  embed = discord.Embed(color=discord.Color.green())
-  embed.title = 'Bot made by Dean_#6947, HamSmacker#8572, tncYT#6749, xnb#0001.'
-  embed.set_footer(text=bot.user.name,icon_url=bot.user.avatar_url)
-  
-  await ctx.message.reply(embed=embed, mention_author=True)
 
-bot.run("OTIyNjIwMTc1NjMzNzY4NDY4.YcEG_w.t8SuFPeeuLewD2YPLqC-Pptf67c")
+
+
+
+client.run(token)
