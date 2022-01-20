@@ -27,8 +27,8 @@ from os.path import isfile, join
 
 client = commands.Bot(command_prefix=">")
 slash = SlashCommand(client, sync_commands=True)
-token = "OTIyNjIwMTc1NjMzNzY4NDY4.YcEG_w.t8SuFPeeuLewD2YPLqC-Pptf67c"
-botversion = "V1.9.6"
+token = "PUT BOT TOKEN HERE"
+botversion = "PUT BOT VERSION HERE"
 
 
 
@@ -46,59 +46,7 @@ async def on_ready():
 
 
 memes = [
-    'https://cdn.discordapp.com/attachments/922622740094136332/923019600415830057/qxa3exkuqx681.png',#1
-    'https://cdn.discordapp.com/attachments/922622740094136332/923019713557196860/d2sje9ft8w681.png',#2
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020095763144744/4nhaafkf6r681.mp4',#3
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020356640464987/fecmc4a82z681.png',#4
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020411694874695/d64e95601y681.png',#5
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020493890658374/np30myksrx681.png',#6
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020548282396762/do0vlg2yuy681.png',#7
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020753731989505/1nds3dtqfs681.png',#8
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020814822043718/iuqsu2owvv681.png',#9
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020883000451122/jf1tzdj2iv681.png',#10
-    'https://cdn.discordapp.com/attachments/922622740094136332/923020924998021140/ads9uxd8zy681.png',#11
-    'https://cdn.discordapp.com/attachments/922622740094136332/923021000558407690/5jgjsp18iz681.png',#12
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rjn6ge/climbing_on_top_of_a_tower_of_desks/',#13
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rk6c5o/lighting_yourself_on_fire_then_panicking_because/',#14
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rkvnqz/goofy_and_his_friends_playing_in_the_woods/',#15
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rimys0/dancing_in_the_back_of_a_pickup/',#16
-    'https://www.reddit.com/r/WinStupidPrizes/comments/ribigb/wrong_game_with_kids/',#17
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rhrciw/tazer_tazer_tazer_aha/',#18
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rhkowz/testing_to_see_if_robot_grabbing_own_groin_could/ ',#19
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rgj0mu/bicecle/',#20
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rgcfmk/opening_a_beer_this_way/',#21
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rfzu7w/woman_tries_to_befriend_rat_rat_attempts_friends/',#22
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rfycjn/men_launches_fireworks_to_a_hot_hair_balloon/',#23
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rfnuy7/sliding_down_the_bowling_alley/',#24
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rfv1a5/intention_ball_bonks_ball_reality_ball_bonks_balls/',#25
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rdgw6a/professional_backflip/',#26
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rcjspi/girl_tries_doing_a_handstand_on_her_bed_with_a/',#26
-    'https://www.reddit.com/r/WinStupidPrizes/comments/renf5o/doing_a_wheelie/',#27
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rar25a/surprise_stupid_prize_for_wouldbe_thief_merry/',#29
-    'https://www.reddit.com/r/WinStupidPrizes/comments/rd6wkw/sometimes_you_want_an_unusual_fireworks_display/',#30
-    'https://www.reddit.com/r/WinStupidPrizes/comments/ra8ubs/guy_slips_on_icethen_decides_to_deja_vu_himself/',#31
-    'https://img.izismile.com/img/img14/20211206/gifs/morning_gifdump_173_12.gif',#32
-    'https://www.reddit.com/r/WinStupidPrizes/comments/ra34ab/guy_tries_to_enter_a_house_forcibly_and_threatens/',#33
-    'https://www.reddit.com/r/WinStupidPrizes/comments/r91moq/fireworks_at_the_butt_no/',#34
-    'https://www.reddit.com/r/WinStupidPrizes/comments/r8m11s/play_with_fire_while_spraying_flamable_foam_on/',#35
-    'https://www.reddit.com/r/WinStupidPrizes/comments/r8bcyq/he_jumped_into_a_ring_of_fire/',#36
-    'https://www.reddit.com/r/WinStupidPrizes/comments/r84xsx/fortnight_dancing_on_a_trucks_bed/',#37
-    'https://www.reddit.com/r/WinStupidPrizes/comments/r76iqp/this_exercise_looks_legit/',#38
-    'https://www.reddit.com/r/WinStupidPrizes/comments/r5usko/douchebag_blocking_traffic_and_hitting_cars_gets/',#39
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qz2u1v/pulling_yourself_up_in_a_bucket/',#40
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qwdf5t/dora_wakes_up_her_roommate/',#41
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qv4nbd/tail_bone_bye/',#42
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qr6ccp/harassing_raccoons_inside_a_waste_container/', #43
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qlpryk/thats_what_you_get_when_you_stand_on_an_empty_tank/',# 44
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qmrbbw/doing_that_cup_thing/', #45
-    'https://www.reddit.com/r/WinStupidPrizes/comments/ql02ay/trying_to_grab_a_tomato_through_a_spinning/', #46
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qk8j49/what_happens_when_you_jump_on_plastic_bins/', #47
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qgb196/dont_make_fun_of_dogs/', #48
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qjdazb/girl_releases_graduation_balloons_and_hit_power/', #49
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qhtl7a/traffic_light_1_dude_0/', #50
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qi7jmp/nut_crushed/', #51
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qj2cnz/idiot_fighting_a_snowma/', #52
-    'https://www.reddit.com/r/WinStupidPrizes/comments/qez9qz/checking_phone_while_cycling/' #53
+#put your memes here
 ]
 
 
